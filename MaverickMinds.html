@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kesehatan Jasmani & Rohani</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Header dengan logo */
+        .header-with-logo {
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #6a11cb 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-logo {
+            flex: 0 0 120px;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .circular-logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .circular-logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .header-content {
+            flex: 1;
+            padding: 0 1rem;
+        }
+        
+        .header-with-logo::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.8rem;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .header-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            font-weight: 300;
+            margin-bottom: 1.2rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .decorative-line {
+            width: 150px;
+            height: 4px;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            margin: 0 auto 1.5rem;
+            border-radius: 2px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        h2 {
+            color: #2c5282;
+            margin: 2.5rem 0 1.5rem;
+            padding-bottom: 0.8rem;
+            position: relative;
+            font-size: 2.2rem;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, #4a90e2, #63b3ed);
+            border-radius: 2px;
+        }
+        
+        .intro {
+            text-align: center;
+            margin: 3rem 0;
+            font-size: 1.3rem;
+            color: #4a5568;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .content-section {
+            background-color: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 5px solid #4a90e2;
+        }
+        
+        .content-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .health-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2.5rem;
+        }
+        
+        .health-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            border-top: 5px solid transparent;
+            background: linear-gradient(white, white) padding-box,
+                        linear-gradient(135deg, #667eea, #764ba2) border-box;
+            border: 2px solid transparent;
+        }
+        
+        .health-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-image {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40%;
+            background: linear-gradient(to top, rgba(0,0,0,0.1), transparent);
+        }
+        
+        .card-content {
+            padding: 1.8rem;
+        }
+        
+        .health-card h3 {
+            color: #2d3748;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .health-card h3::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            background: #4a90e2;
+            border-radius: 50%;
+        }
+        
+        .health-card p {
+            color: #4a5568;
+            line-height: 1.7;
+        }
+        
+        .tips-list {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .tips-list li {
+            margin-bottom: 0.8rem;
+            padding-left: 0.5rem;
+            position: relative;
+        }
+        
+        .tips-list li::before {
+            content: '✓';
+            position: absolute;
+            left: -1.5rem;
+            color: #48bb78;
+            font-weight: bold;
+        }
+        
+        .conclusion {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 2.5rem;
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .conclusion::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.2;
+            animation: moveBackground 20s linear infinite;
+        }
+        
+        @keyframes moveBackground {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .conclusion h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .conclusion p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            line-height: 1.8;
+        }
+        
+        footer {
+            background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+            color: white;
+            text-align: center;
+            padding: 2.5rem 0;
+            margin-top: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, #667eea, #764ba2);
+        }
+        
+        .footer-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background: #667eea;
+            transform: translateY(-3px);
+        }
+        
+        .section-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #667eea;
+            display: inline-block;
+        }
+        
+        .floating-element {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            z-index: 1;
+        }
+        
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.3rem;
+            }
+            
+            .header-subtitle {
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .health-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .header-with-logo {
+                flex-direction: column;
+                text-align: center;
+                padding: 1.5rem 0;
+            }
+            
+            .header-logo {
+                flex: 0 0 auto;
+                padding: 0;
+                margin-bottom: 1rem;
+            }
+            
+            .header-content {
+                padding: 0 1.5rem;
+            }
+            
+            .circular-logo {
+                width: 70px;
+                height: 70px;
+            }
+            
+            .content-section {
+                padding: 1.8rem;
+            }
+            
+            .conclusion {
+                padding: 2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .circular-logo {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .header-subtitle {
+                font-size: 1rem;
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .content-section, .intro, .health-card {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        
+        .health-card:nth-child(1) { animation-delay: 0.1s; }
+        .health-card:nth-child(2) { animation-delay: 0.2s; }
+        .health-card:nth-child(3) { animation-delay: 0.3s; }
+        
+        h2:hover::after {
+            width: 120px;
+            transition: width 0.3s ease;
+        }
+        
+        .content-section:nth-child(3) {
+            border-left-color: #764ba2;
+        }
+        
+        .content-section:nth-child(3) h2::after {
+            background: linear-gradient(to right, #764ba2, #9f7aea);
+        }
+    </style>
+</head>
+<body>
+    <header class="header-with-logo">
+        <div class="floating-element" style="top: 10%; left: 5%;"></div>
+        <div class="floating-element" style="top: 20%; right: 8%; width: 70px; height: 70px;"></div>
+        
+        <div class="header-logo">
+            <img src="logo ypt.jpeg" alt="Logo SMK YPT PRINGSEWU" class="circular-logo">
+        </div>
+        
+        <div class="header-content">
+            <h1><i class="fas fa-heartbeat section-icon"></i> Kesehatan Jasmani & Rohani</h1>
+            <div class="decorative-line"></div>
+            <p class="header-subtitle">Keseimbangan Harmonis untuk Hidup yang Lebih Berkualitas dan Bermakna</p>
+            <p class="header-subtitle" style="font-size: 1rem; opacity: 0.8;">SMK YPT PRINGSEWU</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <section class="intro">
+            <p>Kesehatan adalah mahkota tak terlihat yang hanya dapat dilihat oleh mereka yang sakit. Tidak hanya kesehatan fisik, tetapi juga kesehatan mental dan spiritual sama pentingnya untuk mencapai kesejahteraan hidup yang utuh dan holistik.</p>
+        </section>
+        
+        <section class="content-section">
+            <h2><i class="fas fa-running"></i> Kesehatan Jasmani</h2>
+            <p>Kesehatan jasmani mengacu pada kondisi fisik tubuh yang optimal, bebas dari penyakit, dan memiliki energi yang cukup untuk melakukan aktivitas sehari-hari dengan penuh vitalitas. Menjaga kesehatan jasmani melibatkan pola makan sehat, olahraga teratur, dan istirahat yang cukup.</p>
+            
+            <div class="health-grid">
+                <div class="health-card">
+                    <img src="gambar1.jpeg" alt="Pola Makan Sehat" class="card-image">
+                    <div class="card-content">
+                        <h3>Pola Makan Sehat</h3>
+                        <p>Konsumsi makanan bergizi seimbang dengan memperhatikan porsi dan variasi nutrisi yang dibutuhkan tubuh untuk berfungsi optimal.</p>
+                    </div>
+                </div>
+                
+                <div class="health-card">
+                    <img src="gambar2.jpeg" alt="Olahraga Teratur" class="card-image">
+                    <div class="card-content">
+                        <h3>Olahraga Teratur</h3>
+                        <p>Aktivitas fisik membantu menjaga kebugaran, mengontrol berat badan, meningkatkan mood, dan mengurangi risiko penyakit kronis.</p>
+                    </div>
+                </div>
+                
+                <div class="health-card">
+                    <img src="gambar3.jpeg" alt="Istirahat Cukup" class="card-image">
+                    <div class="card-content">
+                        <h3>Istirahat Berkualitas</h3>
+                        <p>Tidur yang berkualitas membantu tubuh memperbaiki sel-sel yang rusak, memulihkan energi, dan menjaga keseimbangan hormon.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <h3><i class="fas fa-clipboard-list"></i> Tips Menjaga Kesehatan Jasmani:</h3>
+            <ul class="tips-list">
+                <li>Minum air putih minimal 8 gelas per hari</li>
+                <li>Konsumsi buah dan sayur dengan warna beragam setiap hari</li>
+                <li>Lakukan olahraga minimal 30 menit, 3-5 kali seminggu</li>
+                <li>Hindari kebiasaan merokok dan konsumsi alkohol berlebihan</li>
+                <li>Lakukan pemeriksaan kesehatan secara rutin dan preventif</li>
+            </ul>
+        </section>
+        
+        <section class="content-section">
+            <h2><i class="fas fa-spa"></i> Kesehatan Rohani</h2>
+            <p>Kesehatan rohani berkaitan dengan kesejahteraan batin, ketenangan pikiran, dan hubungan dengan nilai-nilai spiritual yang dalam. Kesehatan rohani yang baik membantu kita menghadapi stres, menemukan makna hidup, dan membangun hubungan yang sehat dengan diri sendiri dan orang lain.</p>
+            
+            <div class="health-grid">
+                <div class="health-card">
+                    <img src="gambar4.jpeg" alt="Meditasi dan Refleksi" class="card-image">
+                    <div class="card-content">
+                        <h3>Meditasi dan Refleksi</h3>
+                        <p>Meluangkan waktu untuk merenung dan menenangkan pikiran dapat meningkatkan kesejahteraan mental dan kejelasan berpikir.</p>
+                    </div>
+                </div>
+                
+                <div class="health-card">
+                    <img src="gambar5.jpeg" alt="Hubungan Sosial" class="card-image">
+                    <div class="card-content">
+                        <h3>Hubungan Sosial</h3>
+                        <p>Menjalin hubungan yang positif dengan keluarga, teman, dan komunitas memberikan dukungan emosional dan rasa memiliki.</p>
+                    </div>
+                </div>
+                
+                <div class="health-card">
+                    <img src="gambar6.jpeg" alt="Pengembangan Diri" class="card-image">
+                    <div class="card-content">
+                        <h3>Pengembangan Diri</h3>
+                        <p>Terus belajar dan mengembangkan potensi diri membantu menemukan makna, tujuan hidup, dan kepuasan batin yang mendalam.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <h3><i class="fas fa-clipboard-list"></i> Tips Menjaga Kesehatan Rohani:</h3>
+            <ul class="tips-list">
+                <li>Luangkan waktu hening untuk diri sendiri setiap hari</li>
+                <li>Praktikkan rasa syukur atas hal-hal baik dalam hidup</li>
+                <li>Jalin komunikasi yang mendalam dengan orang terdekat</li>
+                <li>Temukan aktivitas yang memberi makna dan kepuasan batin</li>
+                <li>Belajar menerima dan memaafkan, termasuk diri sendiri</li>
+            </ul>
+        </section>
+        
+        <section class="content-section">
+            <h2><i class="fas fa-balance-scale"></i> Keseimbangan antara Jasmani dan Rohani</h2>
+            <p>Kesehatan jasmani dan rohani saling terkait dan mempengaruhi satu sama lain secara dinamis. Ketika fisik sehat, kita lebih mudah menjaga keseimbangan emosi dan spiritual. Sebaliknya, ketika mental dan spiritual sehat, kita lebih termotivasi untuk merawat tubuh dengan baik.</p>
+            <p>Mencapai keseimbangan harmonis antara keduanya adalah kunci untuk hidup yang berkualitas, produktif, penuh makna, dan bahagia.</p>
+            
+            <div class="conclusion">
+                <h3><i class="fas fa-gem"></i> Kesimpulan</h3>
+                <p>Menjaga kesehatan jasmani dan rohani adalah investasi terbaik untuk masa depan yang cerah. Dengan keduanya yang seimbang, kita dapat menikmati hidup lebih optimal, menghadapi tantangan dengan lebih baik, dan menciptakan kontribusi positif bagi dunia sekitar kita.</p>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">WEB Edukasi Kesehatan</div>
+            <p>Copyright &copy; 2025 - SMK YPT PRINGSEWU</p>
+            <p>Website ini dibuat dengan penuh dedikasi oleh Kelompok 2</p>
+        </div>
+    </footer>
+
+    <script>
+        // Menambahkan efek scroll halus
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Menambahkan efek paralaks sederhana
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const intro = document.querySelector('.intro');
+            
+            if(intro) {
+                intro.style.transform = `translateY(${scrolled * 0.05}px)`;
+            }
+        });
+        
+        // Menambahkan kelas aktif saat elemen terlihat di viewport
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, observerOptions);
+        
+        // Observasi semua kartu kesehatan
+        document.querySelectorAll('.health-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
